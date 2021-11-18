@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "audio-neteq", "audio-neteq\audio-neteq.vcxproj", "{6926038D-4F17-45C4-9F8A-D1A89E207242}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C96BEC89-B031-419E-AB10-FC7D53008480} = {C96BEC89-B031-419E-AB10-FC7D53008480}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "webrtc-modules", "modules\webrtc-modules.vcxproj", "{C96BEC89-B031-419E-AB10-FC7D53008480}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6926038D-4F17-45C4-9F8A-D1A89E207242}.Debug|x64.ActiveCfg = Debug|x64
+		{6926038D-4F17-45C4-9F8A-D1A89E207242}.Debug|x64.Build.0 = Debug|x64
+		{6926038D-4F17-45C4-9F8A-D1A89E207242}.Debug|x86.ActiveCfg = Debug|Win32
+		{6926038D-4F17-45C4-9F8A-D1A89E207242}.Debug|x86.Build.0 = Debug|Win32
+		{6926038D-4F17-45C4-9F8A-D1A89E207242}.Release|x64.ActiveCfg = Release|x64
+		{6926038D-4F17-45C4-9F8A-D1A89E207242}.Release|x64.Build.0 = Release|x64
+		{6926038D-4F17-45C4-9F8A-D1A89E207242}.Release|x86.ActiveCfg = Release|Win32
+		{6926038D-4F17-45C4-9F8A-D1A89E207242}.Release|x86.Build.0 = Release|Win32
+		{C96BEC89-B031-419E-AB10-FC7D53008480}.Debug|x64.ActiveCfg = Debug|x64
+		{C96BEC89-B031-419E-AB10-FC7D53008480}.Debug|x64.Build.0 = Debug|x64
+		{C96BEC89-B031-419E-AB10-FC7D53008480}.Debug|x86.ActiveCfg = Debug|Win32
+		{C96BEC89-B031-419E-AB10-FC7D53008480}.Debug|x86.Build.0 = Debug|Win32
+		{C96BEC89-B031-419E-AB10-FC7D53008480}.Release|x64.ActiveCfg = Release|x64
+		{C96BEC89-B031-419E-AB10-FC7D53008480}.Release|x64.Build.0 = Release|x64
+		{C96BEC89-B031-419E-AB10-FC7D53008480}.Release|x86.ActiveCfg = Release|Win32
+		{C96BEC89-B031-419E-AB10-FC7D53008480}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF7155BE-0AF8-4F83-B9C4-DEAD52C58B13}
+	EndGlobalSection
+EndGlobal
