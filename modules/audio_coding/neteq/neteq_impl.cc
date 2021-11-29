@@ -548,6 +548,11 @@ int NetEqImpl::SyncBufferSizeMs() const {
                                  rtc::CheckedDivExact(fs_hz_, 1000));
 }
 
+int NetEqImpl::LastOperation() const {
+    MutexLock lock(&mutex_);
+    return (int)last_operation_;
+}
+
 const SyncBuffer* NetEqImpl::sync_buffer_for_test() const {
   MutexLock lock(&mutex_);
   return sync_buffer_.get();

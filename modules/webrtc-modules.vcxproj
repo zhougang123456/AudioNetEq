@@ -65,7 +65,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)third-party\abseil-cpp;$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WEBRTC_WIN;NOMINMAX;_CRT_SECURE_NO_WARNINGS;RTC_DISABLE_LOGGING;WEBRTC_USE_BUILTIN_ISAC_FIX;RTC_DISABLE_TRACE_EVENTS;RTC_DISABLE_METRICS;RTC_DISABLE_CHECK_MSG;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>

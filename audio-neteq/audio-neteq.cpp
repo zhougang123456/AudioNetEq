@@ -11,9 +11,7 @@ static std::unique_ptr<NetEq> neteq_ = nullptr;
 #ifdef __cplusplus
 extern "C" {
 #endif
-    namespace webrtc {
-
-    }
+   
     int init_neteq(int sample_rate, int channels, int encode_type)
     {
         if (neteq_ != nullptr) {
@@ -41,7 +39,7 @@ extern "C" {
         //neteq_ = nullptr;
     }
 
-    int insert_packet(int seq_no, int timestamp, short* data, int samples)
+    int neteq_insert_packet(int seq_no, int timestamp, short* data, int samples)
     {   
         if (neteq_) {
             size_t payload_len = WebRtcPcm16b_Encode(data, samples, (uint8_t*)data);
@@ -59,7 +57,7 @@ extern "C" {
         return -1;
     }
 
-    int get_audio(short* data)
+    int neteq_get_audio(short* data, int channels)
     {
         if (neteq_) {
             AudioFrame out_frame;
@@ -67,10 +65,32 @@ extern "C" {
             if (neteq_->GetAudio(&out_frame, &muted) == -1) {
                 return 0;
             }
-            memcpy(data, out_frame.data(), out_frame.samples_per_channel_ * 2);
+            if (channels == 1) {
+                memcpy(data, out_frame.data(), out_frame.samples_per_channel_ * 2);
+            }
+            else {
+                for (int i = 0; i < out_frame.samples_per_channel_; i++) {
+                    data[i * 2] = out_frame.data()[i];
+                    data[i * 2 + 1] = data[i * 2];
+                }
+            }
             return out_frame.samples_per_channel_;
         }
         return 0;
+    }
+
+    int neteq_get_buffer_size(void) {
+        if (neteq_) {
+            return neteq_->SyncBufferSizeMs();
+        }
+        return 0;
+    }
+
+    int neteq_get_last_operator(void) {
+        if (neteq_) {
+            return neteq_->LastOperation();
+        }
+        return -1;
     }
 
 #ifdef __cplusplus

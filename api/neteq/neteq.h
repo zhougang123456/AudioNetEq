@@ -332,6 +332,8 @@ class NetEq {
   // Returns the length of the audio yet to play in the sync buffer.
   // Mainly intended for testing.
   virtual int SyncBufferSizeMs() const = 0;
+
+  virtual int LastOperation() const = 0;
 };
 
 }  // namespace webrtc

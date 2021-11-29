@@ -196,6 +196,8 @@ class NetEqImpl : public webrtc::NetEq {
 
   int SyncBufferSizeMs() const override;
 
+  int LastOperation() const override;
+
   // This accessor method is only intended for testing purposes.
   const SyncBuffer* sync_buffer_for_test() const;
   Operation last_operation_for_test() const;
