@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "audio-neteq.h"
+#include "api/audio-neteq.h"
 
 int main() 
 {
@@ -18,7 +18,8 @@ int main()
             printf("init neteq failed!\n");
             return -1;
         }
-
+        neteq_set_max_delay(5000);
+        neteq_set_max_speed(1.5);
         int timestamp = 0;
         short seq_no = 0;
         const int kFframSizeMs = 10;
