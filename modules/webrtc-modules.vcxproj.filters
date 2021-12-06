@@ -351,5 +351,8 @@
     <ClCompile Include="..\api\video\color_space.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\api\audio-neteq.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
