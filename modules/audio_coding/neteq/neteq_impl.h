@@ -200,6 +200,8 @@ class NetEqImpl : public webrtc::NetEq {
 
   void SetMaxSpeed(double speed) const override;
 
+  void SetMaximumPacketNumber(int max_packet_number) override;
+
   // This accessor method is only intended for testing purposes.
   const SyncBuffer* sync_buffer_for_test() const;
   Operation last_operation_for_test() const;

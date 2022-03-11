@@ -402,4 +402,9 @@ bool PacketBuffer::ContainsDtxOrCngPacket(
   return false;
 }
 
+void  PacketBuffer::SetMaxPacketNumber(
+    size_t max_packet_number) {
+    max_number_of_packets_ = max_packet_number;
+}
+
 }  // namespace webrtc

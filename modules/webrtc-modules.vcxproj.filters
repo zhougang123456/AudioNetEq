@@ -354,5 +354,8 @@
     <ClCompile Include="..\api\audio-neteq.cc">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="..\rtc_base\zero_memory.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

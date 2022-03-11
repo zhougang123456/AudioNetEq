@@ -337,6 +337,8 @@ class NetEq {
 
   virtual void SetMaxSpeed(double speed) const = 0;
 
+  virtual void SetMaximumPacketNumber(int max_packet_number) = 0;
+
 };
 
 }  // namespace webrtc

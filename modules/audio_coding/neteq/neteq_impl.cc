@@ -558,6 +558,11 @@ void NetEqImpl::SetMaxSpeed(double speed) const {
     accelerate_->SetMaxSpeed(speed);
 }
 
+void NetEqImpl::SetMaximumPacketNumber(int max_packet_number) {
+    MutexLock lock(&mutex_);
+    packet_buffer_->SetMaxPacketNumber(max_packet_number);
+}
+
 const SyncBuffer* NetEqImpl::sync_buffer_for_test() const {
   MutexLock lock(&mutex_);
   return sync_buffer_.get();

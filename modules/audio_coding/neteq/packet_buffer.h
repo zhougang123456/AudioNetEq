@@ -154,6 +154,9 @@ class PacketBuffer {
   virtual bool ContainsDtxOrCngPacket(
       const DecoderDatabase* decoder_database) const;
 
+  virtual void SetMaxPacketNumber(
+      size_t max_packet_number);
+
   // Static method returning true if `timestamp` is older than `timestamp_limit`
   // but less than `horizon_samples` behind `timestamp_limit`. For instance,
   // with timestamp_limit = 100 and horizon_samples = 10, a timestamp in the
