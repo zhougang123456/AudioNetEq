@@ -56,7 +56,7 @@ int maintest() {
         }
         size_t payload_len = WebRtcPcm16b_Encode(inputSample, kSamples, playload);
         //while (next_input_time_ms <= t_ms) {
-        if (seq_no % 4 != 1) {
+        //if (seq_no % 4 != 1) {
             RTPHeader rtp_info;
             PopulateRtpInfo(seq_no, timestamp, &rtp_info);
             if (neteq->InsertPacket(rtp_info, playload) == -1) {
@@ -65,13 +65,13 @@ int maintest() {
             }
             printf("neteq insert packet %u success!\n", seq_no);
          
-        }
+        //}
         ++seq_no;
         timestamp += kSamples;
         next_input_time_ms += static_cast<double>(kFframSizeMs) * driftFactor;
 
         //}
-        if (seq_no % 5 == 0) {
+        if (seq_no % 100 == 0) {
             if (neteq->GetAudio(&out_frame, &muted) == -1) {
                 printf("neteq get audio failed!\n");
                 return -1;
